@@ -3,16 +3,29 @@
  */
 "use strict";
 
-var myNameIs = 'Violet'; // TODO: Fill in your name here.
+(function() {
 
 
+    var myNameIs = 'Violet'; // TODO: Fill in your name here.
 
-function sayHello (name) {
-    return "Hello " + name;
-}
+    function sayHello (name) {
+        return "Hello " + name;
+    }
 
-var helloMessage = sayHello(myNameIs);
-    console.log (helloMessage)
+    var helloMessage = sayHello(myNameIs);
+        console.log (helloMessage)
+
+    var random = Math.floor((Math.random()*100)+1);
+
+    function isOdd (number) {
+        var message = (number % 2 === 0)? "Number is even.": "Oops, number is NOT even.";
+        return message;
+    }
+
+    console.log ("number " + random + " " + isOdd (random))
+
+})();
+
 
 
 /**
@@ -33,14 +46,6 @@ var helloMessage = sayHello(myNameIs);
 
 // Don't modify the following line, it generates a random number between 1 and
 // 100 and stores it in a variable named random
-var random = Math.floor((Math.random()*100)+1);
-
-function isOdd (number) {
-    var message = (number % 2 === 0)? "Number is even.": "Oops, number is NOT even.";
-    return message;
-}
-
-console.log ("number " + random + " " + isOdd (random))
 
 /**
  * TODO:
@@ -58,7 +63,3 @@ console.log ("number " + random + " " + isOdd (random))
  * Call the function 'isOdd' passing the variable 'random' as a parameter.
  * console.log *outside of the function* to check your work
  */
-
-(function() {
-
-})();
