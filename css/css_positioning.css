@@ -1,0 +1,68 @@
+.box {
+
+    /*
+    border-width: 1px;
+    border-color: #8E949A;
+    border-style: solid;
+
+    */
+
+    /* shorthand */
+    border: 1px solid #8E949A; /* These rules are equivalent */
+    width: 72px;
+    height: 72px;
+    float:left;
+    position:relative;
+
+
+    /*padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;*/
+
+    /*padding: 10px 10px; !* first value is top-bottom, second one is left-right *!*/
+
+    padding: 10px;
+    margin: 25px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#header {
+    margin-bottom: 50px}
+
+#red {
+    background-color: #D84231;
+
+
+}
+#orange {
+    background-color: #EAAE33;
+
+}
+#yellow {
+    background-color: #FCF733;
+    clear:left;
+
+}
+#green {
+    background-color: #578C05;
+
+
+}
+#blue {
+    background-color: #234AFB;
+    clear:left;
+
+}
+#purple {
+    background-color: #DF8BF0;
+}
+
+div.box img
+{
+    position:absolute;
+    top:-40px;
+    right: -40px;
+
+}

@@ -1,0 +1,28 @@
+div {
+    border: 1px solid #8E949A;
+    width: 150 px;
+    height: 50 px;
+    padding: 10px;
+    margin-top 10px;
+    font-weight: bold;
+    color: #fff;
+}
+    /* border-width: 1px;
+    border-color: #8E949A;
+    border-style: solid;
+
+    This format is the long version of the above div  */
+
+#red {background-color: #D84231;}
+
+#orange {
+    background-color: #EAAE33
+    margin-left: 30px;
+
+#yellow {
+    background-color: #ffed1e
+
+}
+
+}
+

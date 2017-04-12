@@ -1,0 +1,19 @@
+#wrapper{
+    font-weight: bold;
+    color: mediumblue;
+    border: 1px solid darkred;
+    height: 150px;
+    width: 150px;
+}
+#wrapper2 {
+    font-family: "Lucida Grande";
+    font-size: 1.5em;
+
+}
+
+#wrapper3 {
+    height: 200px;
+    color: crimson;
+    border: 10px;
+
+}
