@@ -13,10 +13,7 @@
             console.log(planets);
             console.log("---- ---- ---- ----");
         }
-
     logPlanets();
-
-
 
     console.log('Adding "The Sun" to the beginning of the planets array.');
     planets.unshift('Sun');
