@@ -4,38 +4,38 @@
 (function(){
     "use strict";
 
-    /**
-     * TODO:
-     * Create person object, store it in a variable named person
-     */
-
-    var person = {
-        firstName:  "Violet",
-        lastName: "De La Rosa",
-
-        sayHello: function () {
-            alert("Hello from " + person.firstName + " " + person.lastName);
-        }
-    };
-    person.sayHello();
-
-    /**
-     * TODO:
-     * Create firstName and lastName properties in your person object, and
-     * assign your name to them
-     */
-
-
-
-    /**
-     * TODO:
-     * Add a sayHello method to the person object that returns a greeting using
-     * the firstName and lastName properties.
-     * console.log the returned message to check your work
-     *
-     * Example
-     * person.sayHello() // returns "Hello from Rick Sanchez!"
-     */
+    // /**
+    //  * TODO:
+    //  * Create person object, store it in a variable named person
+    //  */
+    //
+    // var person = {
+    //     firstName:  "Violet",
+    //     lastName: "De La Rosa",
+    //
+    //     sayHello: function () {
+    //         alert("Hello from " + person.firstName + " " + person.lastName);
+    //     }
+    // };
+    // person.sayHello();
+    //
+    // /**
+    //  * TODO:
+    //  * Create firstName and lastName properties in your person object, and
+    //  * assign your name to them
+    //  */
+    //
+    //
+    //
+    // /**
+    //  * TODO:
+    //  * Add a sayHello method to the person object that returns a greeting using
+    //  * the firstName and lastName properties.
+    //  * console.log the returned message to check your work
+    //  *
+    //  * Example
+    // //  * person.sayHello() // returns "Hello from Rick Sanchez!"
+    //  */
 
     /** TODO: Remember this problem from before?
      *
@@ -51,11 +51,21 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
 
+    var discount = .35;
+
+    shoppers.forEach(function(shopper) {
+
+        console.log (shopper.name + ' ' + shopper.amount);
+        if (shopper.amount > 200) {
+            console.log ("The total is " + shopper.amount * discount);
+        }
+
+    })
 
 })();
