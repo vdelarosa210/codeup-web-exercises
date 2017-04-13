@@ -10,15 +10,20 @@
     var planetsArray = planetsString.split('|');
     console.log(planetsArray);
 
-    for (var i = 0; i < planetsArray.length; i++){
-        document.write(planetsArray[i] + '<br />')
-    }
+    var joinedPlanets = planetsArray.join("<br>");
+    console.log(joinedPlanets);
+
+
+    // for (var i = 0; i < planetsArray.length; i++){
+    //     document.write(planetsArray[i] + '<br />')
+    // }
 
     // TODO: Convert planetsString to an array, save it to planetsArray.
 
 
     // TODO: Create a string with <br> tags between each planet. console.log() your results.
     //       Why might this be useful?
+
 
 
 
