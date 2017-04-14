@@ -75,15 +75,15 @@
 // Be creative and add at least 5 books to the array
 
 var books = [
-    {title: "Charlotte's Web" , author: 'E.B. White'},
-    {title: "To Kill a Mockingbird" , author: 'Harper Lee'},
-    {title: "Gone With the Wind" , author: 'Margaret Mitchell'},
-    {title: "The Purpose Driven Life" , author: 'Rick Warren'},
-    {title: "Think and Grow Rich" , author: 'Napoleon Hill'}
+    {title: "Charlotte's Web", author: 'E.B. White'},
+    {title: "To Kill a Mockingbird", author: 'Harper Lee'},
+    {title: "Gone With the Wind", author: 'Margaret Mitchell'},
+    {title: "The Purpose Driven Life", author: 'Rick Warren'},
+    {title: "Think and Grow Rich", author: 'Napoleon Hill'}
 ];
 
 // log out the books array
-    console.log (element.title + element.author);
+    console.log (books.title + books.author);
 
 // todo:
 // Loop through the array of books using .forEach and print out the specified information about each one.
