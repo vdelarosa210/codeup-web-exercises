@@ -6,7 +6,16 @@
 </head>
 <body>
 
-<h1 id="main-header">Hello World!</h1>
+<p id="main-header">Hello World!</p>
+
+    <button id="btn1">JavaScript is not Cool!</button>
+
+    <button id="btn2">Welcome back to JavaScript!</button>
+
+    <button id="btn3">Click Me!</button>
+
+    <button id="btn4">The End!</button>
+
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -14,7 +23,9 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
-<h2 id="sub-header">Hello Again.</h2>
+<p id="sub-header">Hello Again.</p>
+
+
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -28,6 +39,27 @@
 <script>
     (function() {
         "use strict";
+
+        var listener = function (event) {
+            alert('You clicked the button!');
+        };
+        document.getElementById('btn1').addEventListener('click', listener, false);
+
+        var listener2 = function (event) {
+            alert('You clicked another button!');
+        };
+        document.getElementById('btn2').addEventListener('click', listener2, false);
+
+        var listener3 = function (event) {
+            alert('Yes, it is!');
+        };
+        document.getElementById('btn3').addEventListener('click', listener3, false);
+
+        var listener4 = function (event) {
+            alert('Wat!');
+        };
+        document.getElementById('btn4').addEventListener('click', listener4, false);
+
         // TODO: Uncomment next line and get the main header element by id
          var mainHeader = document.getElementById('main-header');
          console.log(mainHeader);
@@ -72,6 +104,8 @@
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
         subParagraphs[0].innerText = "Mission Accomplished!";
+
+
 
     })();
 </script>
