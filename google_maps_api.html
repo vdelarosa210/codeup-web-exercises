@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps API</title>
+    <style type="text/css">
+        #map-canvas {
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Gristmill River Restaurant & Bar</h2>
+
+<div id="map-canvas"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDblvzGqe5rEVQLA8wIJvgxrzSTcuxHjjI"></script>
+
+<script type="text/javascript">
+    (function () {
+        "use strict";
+
+        var gristmill = {lat: 29.738315, lng: -98.105177};
+
+        var infowindow = new google.maps.InfoWindow({
+            content: "Gristmill River Restaurant & Bar<br>Historical!<br>Delicious!<br>& AFFORDABLE!"
+        });
+
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 18,
+
+            // This sets the center of the map at our location
+            center: {
+                lat: 29.426791,
+                lng: -98.489602
+            }
+        };
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+
+        var marker = new google.maps.Marker({
+            position: gristmill,
+            map: map
+        });
+
+        infowindow.open(map, marker);
+
+        var address = "1287 Gruene Rd, New Braunfels, TX 78130";
+
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({"address": address}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+            } else {
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+
+        });
+
+
+    })()
+
+</script>
+
+</body>
+</html>
