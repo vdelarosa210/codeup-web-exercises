@@ -59,7 +59,17 @@ $('#btn').click(function () {
 
    $('p').dblclick(function () {
        $('p').css('font-size', '18px');
-   })
+   });
+
+
+   $('li').hover(function () {
+       $('li').css('color', '#FF0000');
+   },
+       function () {
+           $('li').css('color', '#FAFAFA');
+       }
+
+   );
 
     })()
 
