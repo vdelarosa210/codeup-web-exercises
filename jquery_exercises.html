@@ -11,6 +11,8 @@
 
 <h1>Chrysalis Ministries</h1>
 
+<button id="btn">More Info</button>
+
 <p id="actionItems">Action Items</p>
 
 <ul>
@@ -42,15 +44,18 @@
     "use strict";
     $(document).ready(function () {
 
-        $('.codeup').css('border', '1px solid #F00');
+//        $('.codeup').css('border', '1px solid #F00');
+//
+//        $('li').css('font-size', '20px');
+//
+////        $('h1, p, li').css('background-color', 'yellow');
+//
+//        alert($('h1').text());
 
-        $('li').css('font-size', '20px');
+$('#btn').click(function () {
+    $('h1').css('color', '#720FFF');
 
-//        $('h1, p, li').css('background-color', 'yellow');
-
-        alert($('h1').text());
-
-
+})
 
 
     })()
