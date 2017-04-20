@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twisted Liquor</title>
+    <style type="text/css">
+        #map-canvas {
+            width: 800px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<img src="Screen%20Shot%202016-09-23%20at%204.46.25%20PM%202.png">
+
+<div id="map-canvas"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDblvzGqe5rEVQLA8wIJvgxrzSTcuxHjjI"></script>
+
+<script type="text/javascript">
+    (function () {
+        "use strict";
+
+        var twistedLiquor = {lat: 37.7543151, lng: -100.0107517};
+
+        var infowindow = new google.maps.InfoWindow({
+            content: "TWISTED LIQUOR<br>Where all you need can be found!"
+        });
+
+        var mapOptions = {
+            zoom: 19,
+
+            center: {
+                lat: 37.7543151,
+                lng: -100.0107517
+            },
+
+            // Different types of maps
+
+
+//            mapTypeId: google.maps.MapTypeId.HYBRID
+////            mapTypeId: google.maps.MapTypeId.ROADMAP
+//            mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+
+        var marker = new google.maps.Marker({
+            position: twistedLiquor,
+            map: map
+        });
+
+        infowindow.open(map, marker);
+
+    })()
+
+</script>
+
+</body>
+</html>
