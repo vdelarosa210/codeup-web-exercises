@@ -14,7 +14,7 @@
 
 <img class="img" id="video" src="https://media.giphy.com/media/3oz8xZGfHArTvh99YI/giphy.gif">
 
-<audio class="ojays" src="Music/The%20O'Jays%20-%20For%20The%20Love%20of%20Money%20(Audio).mp3">ojays</audio>
+<audio id="ojays" src="Music/ojays-for-the-love-of-money.mp3">ojays</audio>
 
 
 <script src="js/jquery-2.2.4.js"></script>
@@ -36,7 +36,7 @@
                 $(document).unbind('keydown', llaves);
                 $('#statement').css('display', 'block');
                 $('#video').css('display', 'block');
-                $('.ojays').play();
+                document.getElementById("#ojays").play();
             }
 
         });
