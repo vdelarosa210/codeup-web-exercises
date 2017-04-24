@@ -12,6 +12,8 @@
 </head>
 <body>
 
+<button class="button">FAQs</button>
+
 <h1>10 National Park FAQs</h1>
 <dl>
     <dt>What facilities or services does Park offer?</dt>
@@ -42,6 +44,17 @@
 <script>
     "use strict";
 
+    $(document).ready(function () {
+
+        $('.button').click(function () {
+            $("dd").toggleClass("invisible");
+        });
+
+    $('dt').click(function () {
+        $(this).css('background-color', 'yellow');
+    });
+
+    });
 
 
 
