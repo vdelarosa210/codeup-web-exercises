@@ -16,8 +16,8 @@
 
 <div>
 
-<h1 id="signUp">Would you like to sign up for our newsletter? <span><button id="no">x</button></span></h1>
-
+<h1 id="signUp">Would you like to sign up for our newsletter? <span>x</span></h1>
+<h2 id="register">Register here for additional news!</h2>
 
 </div>
 
@@ -111,22 +111,19 @@
 
     //=====when x is clicked, hide the entire div element======//
 
-        $('#no').click(function () {
-            $('#signUp').hide();
+        $('span').click(function () {
+            $(this).parent().parent().hide();
         });
 
 
     //=====hide facts about park when h3 is clicked and
         // when corresponding h3 is clicked ul should be toggled with a sliding effect=======//
         $('h3').click(function () {
-            $('li').hide();
+            $(this).next().slideToggle();
         });
 
     //======User on page for 8 seconds, an h2 should fade that asks user to register for site=====//
-
-
-
-
+        $('#register').hide().delay(8000).fadeIn();
     });
 
 </script>
