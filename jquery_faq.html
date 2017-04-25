@@ -16,8 +16,8 @@
 
 <div>
 
-<h1>Would you like to sign up for our newsletter?</h1>
-<span>x</span>
+<h1 id="signUp">Would you like to sign up for our newsletter? <span><button id="no">x</button></span></h1>
+
 
 </div>
 
@@ -111,7 +111,9 @@
 
     //=====when x is clicked, hide the entire div element======//
 
-
+        $('#no').click(function () {
+            $('#signUp').hide();
+        });
 
 
     //=====hide facts about park when h3 is clicked and
