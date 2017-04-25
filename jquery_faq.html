@@ -38,6 +38,8 @@
         <dd class="invisible">Maybe. You may find limited coverage in some areas of the park. In other areas, coverage is poor to nonexistent. Do not count on being able to receive service.</dd>
 </dl>
 
+<button id="highlightBtn">Facts</button>
+
 <h3>San Antonio Missions</h3>
 <ul>Facts
     <li>This park has four distinct visitor areas, each between 2-3 miles from the previous one.</li>
@@ -76,6 +78,22 @@
     $('dt').click(function () {
         $(this).css('background-color', 'yellow');
     });
+
+    //============================================ For Traversal Lesson//
+
+    var highlightBtn = $('#highlightBtn');
+    highlightBtn.click(function () {
+        $('ul').each(function () {
+            $(this).children().last().css('background-color', 'yellow');
+        });
+
+    });
+
+    //===========Make h3 font bold on click======//
+
+        $('h3').click(function () {
+            $(this).next().css('font-weight', 'bold');
+        });
 
     });
 
