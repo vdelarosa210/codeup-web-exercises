@@ -29,6 +29,10 @@
         "use strict";
         // TODO: Create an ajax GET request for /data/inventory.json
 
+        $('#refresh').click(function () {
+
+
+
         $.ajax("data/inventory.json").done(function (data) {
             console.log(data);
             data.forEach(function (element) {
@@ -36,13 +40,20 @@
                 htmlStr += element.title + "</td><td>";
                 htmlStr += element.quantity + "</td><td>";
                 htmlStr += element.price + "</td><td>";
-                htmlStr += element.categories[0] + "</td></tr>";
+                element.categories.forEach(function (el) {
+                    htmlStr += el + ", "
+                });
+                htmlStr += "</td></tr>";
+
                 $("#insertProducts").append(htmlStr);
             });
 
         }).fail(function () {
             console.log("Incorrect.")
         });
+
+        });
+
 
 
         // TODO: Take the data from inventory.json and append it to the products table
