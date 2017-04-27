@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Application</title>
+    <style>
+        body {
+            background-color: #779ff2;
+            height: 100%;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Weather Application</h1>
+
+<h2>San Antonio</h2>
+
+<div></div>
+<div></div>
+<div></div>
+
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+    "use strict";
+    $(document).ready(function () {
+
+       $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+           APPID: "54980fda0cfe6082c87114e06ec56342",
+           q: "San Antonio, TX"
+           }).done(function (data) {
+           console.log(data);
+       });
+
+
+
+
+
+
+    });
+
+</script>
+
+</body>
+</html>
