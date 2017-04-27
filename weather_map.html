@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Application</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
         body {
             background-color: #779ff2;
             height: 100%;
             width: 100%;
         }
+
+        .display {
+            width: 300px;
+            border: 25px black;
+            padding: 10px;
+            margin: 25px;
+            background-color: white;
+            height: 300px;
+            float: left;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {text-align: center}
 
     </style>
 </head>
@@ -18,9 +36,36 @@
 
 <h2>San Antonio</h2>
 
-<div></div>
-<div></div>
-<div></div>
+<div class="masterContainer">
+
+<div class="display" id="left">
+    <div id="temp"></div>
+    <div id="image"></div>
+    <div>Clouds:</div>
+    <div>Humidity:</div>
+    <div>Wind:</div>
+    <div>Pressure:</div>
+</div>
+
+<div class="display" id="center">
+    <div id="temp"></div>
+    <div id="image"></div>
+    <div>Clouds:</div>
+    <div>Humidity:</div>
+    <div>Wind:</div>
+    <div>Pressure:</div>
+</div>
+
+<div class="display" id="right">
+    <div id="temp"></div>
+    <div id="image"></div>
+    <div>Clouds:</div>
+    <div>Humidity:</div>
+    <div>Wind:</div>
+    <div>Pressure:</div>
+</div>
+
+</div>
 
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -30,7 +75,10 @@
 
        $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
            APPID: "54980fda0cfe6082c87114e06ec56342",
-           q: "San Antonio, TX"
+            lat: 29.423017,
+            lon: -98.48527,
+//           q: "San Antonio, TX",
+           units: "imperial"
            }).done(function (data) {
            console.log(data);
        });
