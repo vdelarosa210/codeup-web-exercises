@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Weather Application</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
         body {
             background-color: #779ff2;
@@ -26,7 +27,9 @@
             text-align: center;
         }
 
-        h2 {text-align: center}
+        h2 {
+            text-align: center
+        }
 
     </style>
 </head>
@@ -38,32 +41,7 @@
 
 <div class="masterContainer">
 
-<div class="display" id="left">
-    <div id="temp"></div>
-    <div id="image"></div>
-    <div>Clouds:</div>
-    <div>Humidity:</div>
-    <div>Wind:</div>
-    <div>Pressure:</div>
-</div>
 
-<div class="display" id="center">
-    <div id="temp"></div>
-    <div id="image"></div>
-    <div>Clouds:</div>
-    <div>Humidity:</div>
-    <div>Wind:</div>
-    <div>Pressure:</div>
-</div>
-
-<div class="display" id="right">
-    <div id="temp"></div>
-    <div id="image"></div>
-    <div>Clouds:</div>
-    <div>Humidity:</div>
-    <div>Wind:</div>
-    <div>Pressure:</div>
-</div>
 
 </div>
 
@@ -73,19 +51,34 @@
     "use strict";
     $(document).ready(function () {
 
-       $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-           APPID: "54980fda0cfe6082c87114e06ec56342",
+        $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+            APPID: "54980fda0cfe6082c87114e06ec56342",
             lat: 29.423017,
             lon: -98.48527,
 //           q: "San Antonio, TX",
-           units: "imperial"
-           }).done(function (data) {
-           console.log(data);
-       });
+            units: "imperial"
+        }).done(function (data) {
+            console.log(data);
+            console.log(data.list[0].humidity);
+
+
+            var content = "";
+
+            for (var i = 0; i < 3; ++i) {
+                content += "<div class='display' id='left'><div id='tempLeft'></div><div id='imageLeft'></div>";
+                content += "<div id='cloudsLeft'>Clouds: " + data.list[i].clouds + "</div>";
+                content += "<div id='humidityLeft'>Humidity: " + data.list[i].humidity + "</div>";
+                content += "<div id='windLeft'>Wind:</div>";
+                content += "<div id='pressureLeft'>Pressure:</div>";
+                content += "</div>";
+            }
 
 
 
 
+            $(".masterContainer").html(content);
+//                $(".masterContainer").html("      <div class='display' id='center'> <div id='tempCenter'></div> <div id='imageCenter'></div> <div id='cloudsCenter'>Clouds:</div> <div id='humidityCenter'>Humidity:</div> <div id='windCenter'>Wind:</div> <div id='pressureCenter'>Pressure:</div> </div> <div class='display' id='right'> <div id='tempRight'></div> <div id='imageRight'></div> <div id='cloudsRight'>Clouds:</div> <div id='humidityRight'>Humidity:</div> <div id='windRight'>Wind:</div> <div id='pressureRight'>Pressure:</div> </div>");
+        });
 
 
     });
