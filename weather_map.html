@@ -66,7 +66,7 @@
 
             for (var i = 0; i < 3; ++i) {
                 content += "<div class='display' id='displayInfo'>"
-                content += "<div id='temp'>" + data.list[i].temp.max + " / " + data.list[i].temp.min + "</div>";
+                content += "<div id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</div>";
                 content += "<img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png'>";
                 content += "<div id='rain'>" + data.list[i].weather[0].main + ": " + data.list[i].weather[0].description + " " + "</div>";
                 content += "<div id='humidity'>Humidity: " + data.list[i].humidity + "</div>";
@@ -79,7 +79,7 @@
 
 
             $(".masterContainer").html(content);
-//                $(".masterContainer").html("      <div class='display' id='center'> <div id='tempCenter'></div> <div id='imageCenter'></div> <div id='cloudsCenter'>Clouds:</div> <div id='humidityCenter'>Humidity:</div> <div id='windCenter'>Wind:</div> <div id='pressureCenter'>Pressure:</div> </div> <div class='display' id='right'> <div id='tempRight'></div> <div id='imageRight'></div> <div id='cloudsRight'>Clouds:</div> <div id='humidityRight'>Humidity:</div> <div id='windRight'>Wind:</div> <div id='pressureRight'>Pressure:</div> </div>");
+
         });
 
 
