@@ -65,11 +65,13 @@
             var content = "";
 
             for (var i = 0; i < 3; ++i) {
-                content += "<div class='display' id='left'><div id='tempLeft'></div><div id='imageLeft'></div>";
-                content += "<div id='clouds'>Clouds: " + data.list[i].clouds + "</div>";
+                content += "<div class='display' id='displayInfo'>"
+                content += "<div id='temp'>" + data.list[i].temp.max + " / " + data.list[i].temp.min + "</div>";
+                content += "<img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png'>";
+                content += "<div id='rain'>" + data.list[i].weather[0].main + ": " + data.list[i].weather[0].description + " " + "</div>";
                 content += "<div id='humidity'>Humidity: " + data.list[i].humidity + "</div>";
                 content += "<div id='wind'>Wind: " + data.list[i].speed + "</div>";
-                content += "<div id='pressure'>Pressure:</div>";
+                content += "<div id='pressure'>Pressure: " + data.list[i].pressure + "</div>";
                 content += "</div>";
             }
 
