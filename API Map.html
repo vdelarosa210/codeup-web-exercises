@@ -26,9 +26,7 @@
 <button id="zoomIn">+</button>
 <button id="zoomOut">-</button>
 
-
 <button id="update">Update map</button>
-
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDblvzGqe5rEVQLA8wIJvgxrzSTcuxHjjI"></script>
@@ -59,8 +57,6 @@
             map.setCenter(new google.maps.LatLng(lat, long));
         });
 
-
-
         var mapOptions = {
             disableDefaultUI: true,
             zoom: zoomVal,
@@ -79,6 +75,11 @@
     };
 
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: "",
+            map:
+        });
 
     })()
 
