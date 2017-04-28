@@ -27,6 +27,11 @@
         h2 {
             text-align: center
         }
+        #map-canvas{
+            width: 800px;
+            height: 500px;
+            margin: 12%;
+        }
     </style>
 </head>
 <body>
@@ -35,11 +40,9 @@
 
 <h2>San Antonio</h2>
 
-<div class="masterContainer">
+<div class="masterContainer"></div>
 
 <div id="map-canvas"></div>
-
-</div>
 
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -47,18 +50,43 @@
 
 <script>
     "use strict";
-//    $(document).ready(function () {
+    $(document).ready(function () {
+
+//=====variables=====//
+
+    var myLatLng = {
+        lat: 29.426791,
+        lng: -98.489602
+    };
+    var mapOptions = {
+        zoom: 18,
+        center: myLatLng
+    };
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+//=====Add Marker=====//
+
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        draggable: true,
+        map: map
+    });
+
+    function updateLocation(lat, lon) {
+
         $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
             APPID: "54980fda0cfe6082c87114e06ec56342",
-            lat: 29.423017,
-            lon: -98.48527,
-//           q: "San Antonio, TX",
-            units: "imperial"
+            lat: lat,
+            lon: lon,
+            units: "imperial",
+            cnt: 3
+
         }).done(function (data) {
             console.log(data);
             console.log(data.list[0].humidity);
             var content = "";
-            for (var i = 0; i < 3; ++i) {
+            for (var i = 0; i < data.list.length; ++i) {
                 content += "<div class='display' id='displayInfo'>"
                 content += "<div id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</div>";
                 content += "<img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png'>";
@@ -70,14 +98,18 @@
             }
             $(".masterContainer").html(content);
         });
+    }
+
+        updateLocation(22, 99);
 
 //=====Add Map=====//
 
+        google.maps.event.addListener(marker, "dragend", function (e) {
+            updateLocation(e.latLng.lat(), e.latLng.lng());
+        });
 
 
-
-
-//    });
+    });
 </script>
 
 </body>
