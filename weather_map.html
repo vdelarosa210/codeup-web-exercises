@@ -37,15 +37,17 @@
 
 <div class="masterContainer">
 
-
+<div id="map-canvas"></div>
 
 </div>
 
 <script src="js/jquery-2.2.4.js"></script>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDblvzGqe5rEVQLA8wIJvgxrzSTcuxHjjI"></script>
+
 <script>
     "use strict";
-    $(document).ready(function () {
+//    $(document).ready(function () {
         $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
             APPID: "54980fda0cfe6082c87114e06ec56342",
             lat: 29.423017,
@@ -61,14 +63,21 @@
                 content += "<div id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</div>";
                 content += "<img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png'>";
                 content += "<div id='rain'>" + data.list[i].weather[0].main + ": " + data.list[i].weather[0].description + " " + "</div>";
-                content += "<div id='humidity'>Humidity: " + data.list[i].humidity + "</div>";
+                content += "<div id='humidity'>Humidity: " + data.list[i].humidity + "%" + "</div>";
                 content += "<div id='wind'>Wind: " + data.list[i].speed + " mph" + "</div>";
-                content += "<div id='pressure'>Pressure: " + data.list[i].pressure + "</div>";
+                content += "<div id='pressure'>Pressure: " + data.list[i].pressure + " hpa" + "</div>";
                 content += "</div>";
             }
             $(".masterContainer").html(content);
         });
-    });
+
+//=====Add Map=====//
+
+
+
+
+
+//    });
 </script>
 
 </body>
