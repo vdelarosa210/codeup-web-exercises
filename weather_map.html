@@ -31,6 +31,11 @@
             text-align: center
         }
 
+        #map-canvas {
+            width: 800px;
+            height: 300px;
+        }
+
     </style>
 </head>
 <body>
@@ -39,11 +44,25 @@
 
 <h2>San Antonio</h2>
 
-<div class="masterContainer">
+<div class="masterContainer"></div>
 
+<div><label for="lat">Lat:</label>
+<input type="text" id="lat" value="29.4268453">
 
+<label for="long">long:</label>
+<input type="text" id="long" value="-98.4897774">
+
+<label for="zoom">zoom:</label>
+<input type="hidden" id="zoom" value="10">
+
+<button id="zoomIn">+</button>
+<button id="zoomOut">-</button>
+
+<button id="update">Update map</button>
 
 </div>
+
+<div id="map-canvas"></div>
 
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -69,14 +88,11 @@
                 content += "<div id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</div>";
                 content += "<img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png'>";
                 content += "<div id='rain'>" + data.list[i].weather[0].main + ": " + data.list[i].weather[0].description + " " + "</div>";
-                content += "<div id='humidity'>Humidity: " + data.list[i].humidity + "</div>";
+                content += "<div id='humidity'>Humidity: " + data.list[i].humidity + "%" + "</div>";
                 content += "<div id='wind'>Wind: " + data.list[i].speed + " mph" + "</div>";
-                content += "<div id='pressure'>Pressure: " + data.list[i].pressure + "</div>";
+                content += "<div id='pressure'>Pressure: " + data.list[i].pressure + " hpa" + "</div>";
                 content += "</div>";
             }
-
-
-
 
             $(".masterContainer").html(content);
 
@@ -84,6 +100,53 @@
 
 
     });
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDblvzGqe5rEVQLA8wIJvgxrzSTcuxHjjI"></script>
+
+<script type="text/javascript">
+    (function () {
+        "use strict";
+
+        var zoomVal = 10;
+
+        var zoomIn = document.getElementById("zoomIn");
+
+        zoomIn.addEventListener('click', function () {
+            map.setZoom(map.getZoom() + 1);
+        });
+
+        var zoomOut = document.getElementById("zoomOut");
+
+        zoomOut.addEventListener('click', function () {
+            map.setZoom(map.getZoom() - 1);
+        });
+
+        var update = document.getElementById("update");
+
+        update.addEventListener('click', function () {
+            var lat = parseFloat(document.getElementById("lat").value);
+            var long = parseFloat(document.getElementById("long").value);
+            map.setCenter(new google.maps.LatLng(lat, long));
+        });
+
+        var mapOptions = {
+            disableDefaultUI: true,
+            zoom: zoomVal,
+
+            center: {
+                lat: 29.4268453,
+                lng: -98.4897774
+            },
+
+            mapTypeId: google.maps.MapTypeId.TERRAIN
+
+        };
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    })()
 
 </script>
 
